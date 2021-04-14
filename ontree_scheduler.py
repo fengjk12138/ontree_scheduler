@@ -36,7 +36,7 @@ async def climb_tree(session):
         msg = f'>>>挂树计时提醒\n[CQ:at,qq={user_id}]开始挂树\n因上报时间与游戏时间存在误差\n挂树时长按照55分钟计算\n开始时间:{climb_stime}\n下树期限:{loss_stime}'
     await session.send(msg)
 
-@sv.on_rex(r'(取消挂树)|(下树)')
+@sv.on_rex(r'^((取消挂树)|(下树))$')
 async def down_tree(bot, ev: CQEvent):
     #获取下树成员以及其所在群信息
     ctx = ev
